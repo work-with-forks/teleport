@@ -326,6 +326,23 @@ const (
 	SAMLConnectorCreatedEvent = "saml.created"
 	// SAMLConnectorDeletedEvent fires when SAML connector is deleted.
 	SAMLConnectorDeletedEvent = "saml.deleted"
+
+	// SessionControlLimit fires when a user's attempt to create an authenticated
+	// session has been rejected due to exceeding a session control limit.
+	SessionControlLimitEvent = "sessctl.limit"
+
+	// SessionControlKind is the kind of session control being applied.
+	SessionControlKind = "sessctl_kind"
+	// SessionControlKindConnection corresponds to the max_connections
+	// RBAC value
+	SessionControlKindConnection = "connection"
+	// SessionControlKindSession corresponds to the max_sessions
+	// RBAC value.
+	SessionControlKindSession = "session"
+
+	// Maximum is an event field specifying a maximal value (e.g. the value
+	// of `max_connections` for a `sessctl.limit` event).
+	Maximum = "max"
 )
 
 const (
